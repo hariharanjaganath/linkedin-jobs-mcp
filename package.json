@@ -1,7 +1,8 @@
+
 {
   "name": "linkedin-jobs-mcp",
   "version": "2.0.0",
-  "description": "MCP server for job search across LinkedIn, Computrabajo, Greenhouse, Lever, Ashby, RemoteOK and Remotive. No login, no API keys, no dependencies.",
+  "description": "MCP server for job search across LinkedIn and other job platforms.",
   "type": "module",
   "main": "server.mjs",
   "bin": {
@@ -15,7 +16,7 @@
     "LICENSE"
   ],
   "scripts": {
-    "start": "node server.mjs",
+    "start": "npx -y supergateway@4.2.0 --stdio \"node server.mjs\" --outputTransport streamableHttp --port ${PORT:-8000} --stateful",
     "test": "node --test test/protocol.test.mjs"
   },
   "engines": {
@@ -26,19 +27,8 @@
     "model-context-protocol",
     "llm",
     "claude",
-    "opencode",
     "linkedin",
-    "computrabajo",
-    "greenhouse",
-    "lever",
-    "ashby",
-    "remotive",
-    "remoteok",
-    "jobs",
-    "job-search",
-    "remote-jobs",
-    "recruiting",
-    "api"
+    "jobs"
   ],
   "author": "Esteban Alonzo",
   "license": "MIT",
